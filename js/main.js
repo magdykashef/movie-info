@@ -72,7 +72,7 @@ function getMovie() {
             <img id="poster" src="${movie.Poster}" class="thumbnail">
           </div>
           <div class="offset-2 col-6 mx-auto">
-            <h2>${movie.Title}</h2>
+            <h2 style="color: white;">${movie.Title}</h2>
             <ul class="list-group">
               <li class="list-group-item"><strong>Genre:</strong> ${movie.Genre}</li>
               <li class="list-group-item"><strong>Released:</strong> ${movie.Released}</li>
@@ -84,8 +84,8 @@ function getMovie() {
               <li class="list-group-item"><strong>Plot:</strong> ${movie.Plot}</li>
             </ul>
             <hr>
-            <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-            <a href="movies.html" class="btn btn-default">Go Back To Search</a>
+            <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary mb-4">View IMDB</a>
+            <a href="movies.html" class="btn btn-primary mb-4">Go Back To Search</a>
         </div>
       `;
       $('#movie').html(output);
