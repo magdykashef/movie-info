@@ -1,8 +1,8 @@
 $(document).ready(() => {
   $('#searchForm').on('submit', (e) => {
+    e.preventDefault();
     let searchText = $('#searchText').val();
     getMovies(searchText);
-    e.preventDefault();
   });
 });
 
