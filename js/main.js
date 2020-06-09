@@ -54,7 +54,7 @@ function getMovies(searchText) {
 
 function movieSelected(id) {
   sessionStorage.setItem('movieId', id);
-  window.location = 'movie.html';
+  window.location = 'movies.html';
   return false;
 }
 
@@ -85,7 +85,7 @@ function getMovie() {
             </ul>
             <hr>
             <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-            <a href="movie.html" class="btn btn-default">Go Back To Search</a>
+            <a href="movies.html" class="btn btn-default">Go Back To Search</a>
         </div>
       `;
       $('#movie').html(output);
