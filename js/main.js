@@ -1,11 +1,12 @@
 // inner
 $(document).ready(() => {
+  $('#apiKey').attr("placeholder", "Put API Key Here");
   $('#searchForm').on('submit', (e) => {
     e.preventDefault();
     let searchText = $('#searchText').val();
-    getMovies(searchText);
+    getMovies(searchText);//get search result
   });
-  getMovie();
+  getMovie();//display the selected movie
 });
 
 function getApiKey(){
@@ -16,6 +17,7 @@ function getApiKey(){
   }
   else if(! (sessionStorage.getItem('api') ) && ($('#apiKey').val().length == 0)){
     $('#apiKey').attr("placeholder", "Put API Key Here");
+    return api;
   }
   else{
     let apiValue = $('#apiKey').val();
@@ -62,7 +64,7 @@ function getMovie() {
   let movieId = sessionStorage.getItem('movieId');
   let sessionApi = sessionStorage.getItem('api');
   $('#apiKey').attr("placeholder", sessionApi);
-  //api='1b234b56';
+  //example api='1b234b56';
   axios.get('http://www.omdbapi.com/?i='+ movieId + '&apikey='+ sessionApi)
     .then((response) => {
       console.log(response);
