@@ -15,7 +15,7 @@ function getApiKey(){
     return api;
   }
   else if(! (sessionStorage.getItem('api') ) && ($('#apiKey').val().length == 0)){
-    console.log("You Have to Enter API KEY");
+    $('#apiKey').attr("placeholder", "Put API Key Here");
   }
   else{
     let apiValue = $('#apiKey').val();
